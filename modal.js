@@ -24,8 +24,28 @@ function launchModal() {
 closeBtn.addEventListener("click", () => {
   modalbg.style.display = "none";
 });
+function openSubmit() {
+  closeForm = document.querySelector("form");
+  submitForm = document.querySelector(".submit-modal");
+  var firstInput = document.getElementById("first").value;
+  var lastInput = document.getElementById("last").value;
+  var emailInput = document.getElementById("email").value;
+  var quantityInput = document.getElementById("quantity").value;
+  if (
+    firstInput.length &&
+    lastInput.length &&
+    emailInput.length &&
+    quantityInput.length > 0
+  ) {
+    console.log("true");
+    closeForm.style.display = "none";
+    submitForm.style.display = "block";
+  } else {
+    console.log("false");
+  }
+}
 // form validation
-const form = document.getElementById("form");
+var form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -64,7 +84,7 @@ function validateEmail() {
     emailError.innerHTML = "Write email address";
     return false;
   }
-  if (!emailInput.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+  if (!emailInput.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     emailError.innerHTML = "Invalid email";
     return false;
   }
@@ -79,4 +99,12 @@ function validateQuantity() {
   }
   quantityError.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
   return true;
+}
+const modalbg2 = document.querySelector(".bground");
+const submitCloseBtn = document.querySelector(".submit-modal");
+function closeSubmitModal() {
+  console.log("click me");
+
+  // submitCloseBtn.style.display = "none";
+  modalbg2.style.display = "none";
 }

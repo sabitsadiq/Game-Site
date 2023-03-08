@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="CSS/all.min.css">
   </head>
   <body>
     <div class="topnav" id="myTopnav">
@@ -111,7 +112,7 @@
               <div
                 class="formData">
                 <label>How many tournaments have you attended? </label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" onkeyup="validateQuantity()">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                 <span id="quantity-error"></span>
               </div>
               <p class="text-label">Where do you want to participate this year?</p>
@@ -210,8 +211,16 @@
                 type="submit"
                 class="button"
                 value="Go"
+                onClick="openSubmit()"
               />
             </form>
+            <div class="submit-modal" id="submit-form">
+              <div class="submit-modal-body">
+                <h2>Thank you for submiting your registration details</h2>
+              </div>
+              <button class="submit-modal-close" onclick="closeSubmitModal()">close</button>
+
+            </div>
           </div>
         </div>
       </div>
@@ -223,5 +232,7 @@
       </p>
     </footer>
     <script src="modal.js"></script>
+    <script src="JS/all.min.js"></script>
+
   </body>
 </html>
