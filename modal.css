@@ -122,7 +122,7 @@ img {
   }
   .topnav a.icon {
     position: absolute;
-    top: -32px;
+    top: -46px;
     right: 5px;
     display: block;
   }
@@ -134,7 +134,7 @@ img {
 @media screen and (max-width: 768px) {
   .main-navbar {
     position: relative;
-    top: 32px;
+    top: 44px;
     right: 5px;
   }
 
@@ -144,7 +144,7 @@ img {
   .topnav.responsive .icon {
     position: absolute;
     right: 12px;
-    top: -43px;
+    top: -50px;
   }
   .topnav.responsive a {
     float: none;
@@ -163,7 +163,10 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: -3px;
+  }
+  .topnav.responsive .icon {
+    top: -89px;
   }
 }
 
